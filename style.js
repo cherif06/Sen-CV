@@ -34,7 +34,7 @@ if(sessionStorage.getItem("infosCV")){
   }
 } 
 remplacerInfos(infosCV);
-if(window.location.pathname === "/contenu.html"){
+if(window.location.pathname === "/contenu.html" || window.location.pathname === "/SEN-CV/contenu.html"){
   updateParcours(infosCV);
   updateLangues(infosCV);
   updateExperiences(infosCV);
@@ -49,7 +49,7 @@ function remplacerInfos(infosCV) {
 
   document.getElementById("photoCV").src = infosCV.photo;
   document.getElementById('nomcv').textContent = infosCV.nomCV;
-  if(window.location.pathname === "/contenu.html"){
+  if(window.location.pathname === "/contenu.html" || window.location.pathname === "/SEN-CV/contenu.html"){
   document.getElementById('nom').textContent = infosCV.nom;  
   document.getElementById('email').textContent = infosCV.email;
   document.getElementById('numero').textContent = infosCV.numero;
@@ -901,7 +901,7 @@ function lightenRGB(hex, factor) {
   let newB = Math.min(255, rgb.b + factor);
   return rgbToHex(newR, newG, newB);
 }
-if(window.location.pathname === "/personnaliser.html"){
+if(window.location.pathname === "/personnaliser.html" || window.location.pathname === "/SEN-CV/personnaliser.html"){
   document.getElementById("colorInput").addEventListener("input", function(event) {
     document.querySelectorAll('.bar-fill').forEach(element => {
       element.style.backgroundColor = lightenRGB(event.target.value,100);
